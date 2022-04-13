@@ -1,3 +1,4 @@
+// Задача 4
 let temperatures = [
     [344, 241, 521, 344, 121],
     [111, 313, 351, 314],
@@ -12,7 +13,7 @@ function temp(temp,i){
 alert(temperatures.some(temp))
 
 /*
-//Задача 3
+//Задача 1
 let numbers = [
     [0, 89, 444, 512, 0, -33, 200, 15],
     [4, 89, 12, 0, -33],
@@ -31,7 +32,7 @@ function perebor (arr1,arr2){
 }
 alert(numbers.sort(perebor))
 */
-//Задача 4
+//Задача 3
 const first = ["Апрель", "Июль", "Октябрь", "Май"];
 const second = ["Май", "Январь", "Декабрь", "Октябрь"];
 
@@ -42,7 +43,7 @@ function findBoth(arr1, arr2) {
 }
 
 alert(findBoth(first,second))
-
+//Задача 2
 const presents = ["книга", "ручка", "блокнот", "дождевик", "скрепки", "брелок"];
 
 console.log(
@@ -59,4 +60,4 @@ console.log(
         console.log(elem);
         return false;
     })
-);
+)
