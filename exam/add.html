@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="add.css">
+</head>
+<body>
+<form id="form">
+<h1>Добавление задачи</h1>
+<div>
+<label for="task" >Название задачи</label>
+<input type="text" class="nameTask" id="task" name="task" placeholder="Введите название задачи">
+
+<div>
+    <label for="descriptionTask" >Описание задачи</label>
+    <textarea id="descriptionTask" class="descripTask" placeholder="Введите описание задачи" ></textarea>
+
+</div>
+<div>
+    <label for="date">Срок выполнения задачи</label>
+    <input type="date" id="date">
+</div>
+<div>
+    <button id="add-user" type="button">Добавить участника</button>
+    <div id="users">
+
+    </div>
+</div>
+ <div>
+     <button id="add-task" type="submit">Добавить задачу</button>
+ </div>
+    </div>
+</form>
+<script src="add.js"></script>
+</body>
+</html>

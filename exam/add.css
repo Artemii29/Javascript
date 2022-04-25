@@ -1,0 +1,11 @@
+.nameTask{
+   width: 500px;
+    height: 25px;
+  margin-left: 50px;
+}
+.descripTask{
+    margin-left: 50px;
+    width: 500px;
+    height: 25px;
+    margin-top: 50px;
+}
