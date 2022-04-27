@@ -1,3 +1,13 @@
+let datee = document.getElementById("date");
+let dataWarning = document.getElementById("data_warning");
+
+datee.addEventListener('input',function (){
+    let now = new Date();
+    let userDate = new Date(datee.value);
+    console.log(now.getTime())
+if(userDate.getTime() <= now.getTime()){
+    dataWarning.innerText = "Дата не может быть в прошлом"
+}})
 let addUserButton = document.getElementById("add-user")
 addUserButton.addEventListener("click",addUser )
 function addUser(){
@@ -17,7 +27,7 @@ function addUser(){
     users.append(user);
 }
 
-let addTaskButton = document.getElementById("form")
+let form = document.getElementById("form")
 form.addEventListener("submit",addTask)
 function addTask(event){
     event.preventDefault();
@@ -44,4 +54,3 @@ function addTask(event){
     localStorage.setItem("tasks",JSON.stringify(tasks))
 
 }
-

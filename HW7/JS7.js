@@ -1,3 +1,4 @@
+
 let items = {
     piano: {
         title: "Пианино",
@@ -66,7 +67,7 @@ function sortBooks (a,b){
        return 0;
    }
     if( a.title < b.title){
-        return -1
+        return -1;
     }
     if (a.title > b.title) {
         return 1;
@@ -75,3 +76,62 @@ function sortBooks (a,b){
 }
 console.log(books.sort(sortBooks))
 console.log(books)
+
+let animals = [
+    {
+        "name": "Люся",
+        "age": "1 год",
+        "color": "трехцветная",
+        "additional_info": {"vaccinations": true, "passport": true}
+    },
+    {
+        "name": "Том",
+        "age": "3 месяца",
+        "color": "белый",
+        "additional_info": {"vaccinations": false, "passport": false}
+    },
+    {
+        "name": "Макс",
+        "age": 2,
+        "color": "белый",
+        "additional_info": {"vaccinations": false, "passport": true}
+    },
+    {
+        "name": "Василий",
+        "age": 3,
+        "color": "черный",
+        "additional_info": {"vaccinations": true, "passport": true}
+    }
+];
+function proverka(object){
+    let mass=[]
+    for (let obj of object) {
+        if(obj.additional_info.vaccinations === true){
+            mass.push(obj)
+        }
+    }
+    return mass
+}
+console.log(proverka(animals))
+
+function col (color){
+    let mass = []
+    for (let obj of color) {
+        if(mass.indexOf(obj.color) === -1){
+            mass.push(obj.color)
+        }
+    }
+    return mass
+}
+console.log(col(animals))
+
+function col (color){
+    let mass = []
+    for (let obj of color) {
+        if(mass.includes(obj.color) === false){
+            mass.push(obj.color)
+        }
+    }
+    return mass
+}
+console.log(col(animals))
