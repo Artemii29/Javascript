@@ -1,6 +1,6 @@
 let addUserButton = document.getElementById("add-user")
 addUserButton.addEventListener("click",addUser )
-function addUser(){
+function addUser() {
     let user = document.createElement("div");
     let input = document.createElement("input");
     let button = document.createElement("button");
@@ -9,7 +9,7 @@ function addUser(){
     button.innerText = "X"
     input.placeholder = "Введите имя участника"
     button.addEventListener("click",deleteUser)
-    function deleteUser(){
+    function deleteUser() {
         user.remove()
     }
     user.append(input);
@@ -19,15 +19,14 @@ function addUser(){
 
 let addTaskButton = document.getElementById("form")
 form.addEventListener("submit",addTask)
-function addTask(event){
+function addTask(event) {
     event.preventDefault();
     let addName = document.getElementById("task").value
     let desciptionTask = document.getElementById("descriptionTask").value
     let date = document.getElementById("date").value
     let users = Array.from(document.querySelectorAll("#users input")).map(u => u.value)
     console.log(users)
-    let taskObj ={
-        //нужно написать полностью объект
+    let taskObj = {
         addName,
         desciptionTask,
         date,
