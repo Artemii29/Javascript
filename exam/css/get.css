@@ -2,3 +2,12 @@
     background-color: red !important;
 
 }
+.butDelete {
+    width: 300px;
+    text-align: center;
+    display:block;
+    margin-top: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+    margin-left: auto;
+}

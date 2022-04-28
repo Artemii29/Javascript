@@ -10,6 +10,7 @@ if(!tasks){
         let div = document.createElement("div")
         let p = document.createElement("p")
         p.innerText = task.addName + task.desciptionTask +"Выполнить к" + " " + task.date + task.users
+        div.id = task.id
         div.append(p)
         tasksSection.append(div)
         div.style.backgroundColor ="orange"
@@ -26,5 +27,16 @@ if(!tasks){
         })
     }
 }
+let butDel = document.getElementById("butDelete")
+butDel.addEventListener("click", deleteTasks)
+function deleteTasks (event){
+    let taskDel = document.querySelectorAll("[selected]")
+    let tasks = localStorage.getItem("tasks")
+    tasks = JSON.parse(tasks)
 
-
+    for (let task of taskDel) {
+        tasks.splice(tasks.findIndex(t => t.id === task.id),1)
+        task.remove()
+    }
+    localStorage.setItem("tasks",JSON.stringify(tasks))
+}

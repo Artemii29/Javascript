@@ -1,10 +1,8 @@
 let datee = document.getElementById("date");
 let dataWarning = document.getElementById("data_warning");
-
 datee.addEventListener('input',function (){
     let now = new Date();
     let userDate = new Date(datee.value);
-    console.log(now.getTime())
 if(userDate.getTime() <= now.getTime()){
     dataWarning.innerText = "Дата не может быть в прошлом"
 }})
@@ -30,6 +28,10 @@ function addUser() {
 let form = document.getElementById("form")
 form.addEventListener("submit",addTask)
 function addTask(event) {
+    let id = localStorage.getItem("id")
+    if(id) id = JSON.parse(id);
+    else id = 1;
+    localStorage.setItem("id",JSON.stringify(id+1))
     event.preventDefault();
     let addName = document.getElementById("task").value
     let desciptionTask = document.getElementById("descriptionTask").value
@@ -40,7 +42,9 @@ function addTask(event) {
         addName,
         desciptionTask,
         date,
-        users
+
+        users,
+        id
     }
     // получил значение по ключу tasks
     let tasks = localStorage.getItem("tasks");
@@ -49,7 +53,5 @@ function addTask(event) {
     //если tasks, равен null то создаем пустой массив
     else tasks = [];
     tasks.push(taskObj)
-    console.log(JSON.stringify(tasks))
     localStorage.setItem("tasks",JSON.stringify(tasks))
-
 }
